@@ -4,13 +4,14 @@ const signupSchema = require('../models/signupSchema')
 const express = require('express');
 const router = express.Router();
 
+
 router.post("/login", async (req, res) => {
     console.log("login called ");
     const { email, password } = req.body;
 
     const lSchema = await signupSchema.find({ email: email, password: password });
     if (lSchema.length != 0) {
-        console.log("sended successfully.. ");
+        console.log("sended successfully.... ");
         res.status(200).json(lSchema);
     }
     else {
@@ -21,8 +22,8 @@ router.post("/login", async (req, res) => {
     // check user exist or not 
     // 1 if yes then return user 
     // 2 if no then return 400.json(problem);
-
-    
+    // const a = async function()
+    // console.log(a);
 })
 router.post("/signup", async (req, res) => {
     console.log("Signup called");
